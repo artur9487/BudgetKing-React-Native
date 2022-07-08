@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "575482122995",
+    "firebase_url": "https://budgetking-a5554-default-rtdb.firebaseio.com",
+    "project_id": "budgetking-a5554",
+    "storage_bucket": "budgetking-a5554.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575482122995:android:b48b330e881cbb6c149d86",
+        "android_client_info": {
+          "package_name": "com.ander8794.BudgetKing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575482122995-ud029q0eaee9agf3riunq2bu4dds3dk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMtvH5g-KBUmSvHolK-lpFvXQ3M9YaKq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575482122995-ud029q0eaee9agf3riunq2bu4dds3dk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
