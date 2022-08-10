@@ -1,3 +1,3 @@
 # Link to the app
 
-https://expo.dev/accounts/ander8794/builds/058bcb84-79f8-4fea-869a-ced27a3bb7b6
+https://expo.dev/accounts/ander8794/builds/698dba51-1433-4ffa-b800-e71bb44d2555
