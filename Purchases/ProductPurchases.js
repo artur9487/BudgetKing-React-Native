@@ -21,9 +21,9 @@ const ProductPurchaseNavigator = () => {
 				headerStyle: { backgroundColor: '#111827' }
 			})}>
 			<>
-				<Stack.Screen name='Your Product Purchases' component={Purchases} />
+				<Stack.Screen name='Your product purchases' component={Purchases} />
 				<Stack.Screen
-					options={{ title: 'Edit The Purchase' }}
+					options={{ title: 'Edit the purchase' }}
 					name='Edit'
 					component={ExpenseWrite}
 				/>

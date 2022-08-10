@@ -120,7 +120,7 @@ const Login = ({ navigation }) => {
 						!error.password &&
 						!error.email &&
 						!error.confirmPassword && (
-							<Text style={styles.errText}>No such account exists</Text>
+							<Text style={styles.errText}> Such account doesnt exists</Text>
 						)}
 					<Stack direction='row' justifyContent='center'>
 						<Button

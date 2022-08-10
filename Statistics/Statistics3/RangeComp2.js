@@ -33,7 +33,7 @@ const RangeComp2 = () => {
 					<Modal.CloseButton />
 					<Modal.Header>
 						<Text italic fontWeight={'bold'} fontSize={23}>
-							Chose first date Ranges to comparise
+							Choose first date ranges to comparise
 						</Text>
 					</Modal.Header>
 					<Modal.Body>

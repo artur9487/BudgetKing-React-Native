@@ -23,9 +23,9 @@ const AllPurchaseNavigator = () => {
 				headerStyle: { backgroundColor: '#111827' }
 			})}>
 			<>
-				<Stack.Screen name='Your Incomes and Purchases' component={Purchases} />
-				<Stack.Screen name='Edit Your Income' component={ExpenseWrite} />
-				<Stack.Screen name='Edit The Purchase' component={Incomes} />
+				<Stack.Screen name='Your incomes and purchases' component={Purchases} />
+				<Stack.Screen name='Edit your income' component={ExpenseWrite} />
+				<Stack.Screen name='Edit the purchase' component={Incomes} />
 			</>
 		</Stack.Navigator>
 	);

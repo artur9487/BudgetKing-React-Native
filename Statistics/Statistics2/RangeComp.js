@@ -19,7 +19,7 @@ const RangeComp = ({ start, end, setDajs, showModal, setShowModal }) => {
 					<Modal.CloseButton />
 					<Modal.Header>
 						<Text italic fontWeight={'bold'} fontSize={23}>
-							Chose Ranges
+							Choose Ranges
 						</Text>
 					</Modal.Header>
 					<Modal.Body>

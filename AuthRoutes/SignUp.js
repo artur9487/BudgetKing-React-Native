@@ -152,7 +152,7 @@ const SignUp = ({ navigation }) => {
 						!error.email &&
 						!error.confirmPassword &&
 						!passError && (
-							<Text style={styles.errText}>Account Already in Use</Text>
+							<Text style={styles.errText}>Account already in use</Text>
 						)}
 					{logError ===
 						'[auth/weak-password] The given password is invalid. [ Password should be at least 6 characters ]' &&

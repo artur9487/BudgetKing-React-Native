@@ -9,7 +9,7 @@ const PurchasesStatistics3 = () => {
 	return (
 		<Statistics3
 			datak={datak}
-			title='Percentage Rate Of Pruchases Estimation During Time Perspective'
+			title='Percentage rate of pruchases estimation during time perspective'
 			type='Purchase'
 		/>
 	);

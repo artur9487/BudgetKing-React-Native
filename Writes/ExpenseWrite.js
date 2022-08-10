@@ -252,7 +252,7 @@ const ExpenseWrite = ({ route, navigation }) => {
 					backgroundColor={useColorModeValue('gray.800')}
 					style={styles.container}>
 					<Heading size='lg' italic color='blueGray.200' mt={8} mb={5}>
-						Write your expensess
+						Write your expenses
 					</Heading>
 					<Contain>
 						<Divider>The company:</Divider>

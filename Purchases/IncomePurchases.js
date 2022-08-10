@@ -21,9 +21,9 @@ const IncomePurchaseNavigator = () => {
 				headerStyle: { backgroundColor: '#111827' }
 			})}>
 			<>
-				<Stack.Screen name='Your Incomes' component={IncomePurchases} />
+				<Stack.Screen name='Your incomes' component={IncomePurchases} />
 				<Stack.Screen
-					options={{ title: 'Edit Your Income' }}
+					options={{ title: 'Edit your income' }}
 					name='Edit2'
 					component={Incomes}
 				/>
