@@ -12,16 +12,24 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 
 const Statistics3 = ({ datak = [], title, type }) => {
-	const [startRange1, setStartRange1] = useState(new Date() - 2629746000 * 2);
-	const [endRange1, setEndRange1] = useState(new Date() - 2629746000);
-	const [startRange2, setStartRange2] = useState(new Date() - 2629746000);
-	const [endRange2, setEndRange2] = useState(new Date());
+	const initialStartRange1 = new Date() - 2629746000 * 2;
+	const initialEndRange1 = new Date() - 2629746000;
+	const initialStartRange2 = new Date() - 2629746000;
+	const initialEndRange2 = new Date();
+	const [startRange1, setStartRange1] = useState(initialStartRange1);
+	const [endRange1, setEndRange1] = useState(initialEndRange1);
+	const [startRange2, setStartRange2] = useState(initialStartRange2);
+	const [endRange2, setEndRange2] = useState(initialEndRange2);
 	const [showModal, setShowModal] = useState(false);
 	const [showModal2, setShowModal2] = useState(false);
 	const dispatch = useDispatch();
 
 	useFocusEffect(
 		useCallback(() => {
+			setStartRange1(initialStartRange1);
+			setEndRange1(initialEndRange1);
+			setStartRange2(initialStartRange2);
+			setEndRange2(initialEndRange2);
 			dispatch(
 				getStatistics3(startRange1, endRange1, startRange2, endRange2, type)
 			);

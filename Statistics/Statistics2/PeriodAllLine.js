@@ -15,9 +15,12 @@ import { ExpenseContext } from '../../InterComp/ContextFile';
 
 const PeriodAllLine = ({ datak = [], title, type }) => {
 	const dispatch = useDispatch();
-	const [start, setStart] = useState(new Date() - 604800000);
-	const [end, setEnd] = useState(new Date());
-	const [interwal, setInterwal] = useState(86400000);
+	const initialStartDate = new Date() - 604800000;
+	const initialEndDate = new Date();
+	const initialInterwal = 86400000;
+	const [start, setStart] = useState(initialStartDate);
+	const [end, setEnd] = useState(initialEndDate);
+	const [interwal, setInterwal] = useState(initialInterwal);
 	const [showModal, setShowModal] = useState(false);
 	const [categoryIcon, setCategoryIcon] = useState('');
 	const allCat = 'All Categories';
@@ -27,6 +30,9 @@ const PeriodAllLine = ({ datak = [], title, type }) => {
 
 	useFocusEffect(
 		useCallback(() => {
+			setStart(initialStartDate);
+			setEnd(initialEndDate);
+			setInterwal(initialInterwal);
 			dispatch(getStatistics2(start, end, interwal, category, type));
 		}, [dispatch])
 	);

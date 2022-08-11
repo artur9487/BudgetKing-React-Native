@@ -25,6 +25,7 @@ const DateComp = () => {
 				Chose Date
 			</Button>
 			<DatePicker
+				locale={'en'}
 				mode='date'
 				modal
 				open={open}

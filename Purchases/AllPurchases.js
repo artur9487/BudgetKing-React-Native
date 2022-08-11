@@ -69,7 +69,9 @@ const Purchases = ({ navigation }) => {
 			<FlatList
 				data={all}
 				renderItem={final}
-				keyExtractor={(item) => item.id}
+				keyExtractor={(item) => {
+					return item.id;
+				}}
 			/>
 		</View>
 	);

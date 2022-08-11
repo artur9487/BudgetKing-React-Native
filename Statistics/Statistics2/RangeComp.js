@@ -30,6 +30,7 @@ const RangeComp = ({ start, end, setDajs, showModal, setShowModal }) => {
 								</Text>
 							</FormControl.Label>
 							<DatePicker
+								locale={'en'}
 								mode='date'
 								date={new Date(one)}
 								onDateChange={setOne}
@@ -41,7 +42,12 @@ const RangeComp = ({ start, end, setDajs, showModal, setShowModal }) => {
 									Last Range
 								</Text>
 							</FormControl.Label>
-							<DatePicker mode='date' date={two} onDateChange={setTwo} />
+							<DatePicker
+								locale={'en'}
+								mode='date'
+								date={two}
+								onDateChange={setTwo}
+							/>
 						</FormControl>
 					</Modal.Body>
 					<Modal.Footer>

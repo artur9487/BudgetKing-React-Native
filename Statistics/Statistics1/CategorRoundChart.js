@@ -13,12 +13,16 @@ import moment from 'moment';
 
 const CategorRoundChart = ({ datak = [], title, type }) => {
 	const dispatch = useDispatch();
-	const [start, setStart] = useState(new Date() - 604800000);
-	const [end, setEnd] = useState(new Date());
+	const initialStartDate = new Date() - 604800000;
+	const initialEndDate = new Date();
+	const [start, setStart] = useState(initialStartDate);
+	const [end, setEnd] = useState(initialEndDate);
 	const [showModal, setShowModal] = useState(false);
 
 	useFocusEffect(
 		useCallback(() => {
+			setStart(initialStartDate);
+			setEnd(initialEndDate);
 			dispatch(getStatistics1(start, end, type));
 		}, [dispatch])
 	);

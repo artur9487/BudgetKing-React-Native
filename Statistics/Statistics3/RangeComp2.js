@@ -44,6 +44,7 @@ const RangeComp2 = () => {
 								</Text>
 							</FormControl.Label>
 							<DatePicker
+								locale={'en'}
 								mode='date'
 								date={new Date(one)}
 								onDateChange={setOne}
@@ -56,6 +57,7 @@ const RangeComp2 = () => {
 								</Text>
 							</FormControl.Label>
 							<DatePicker
+								locale={'en'}
 								mode='date'
 								date={new Date(two)}
 								onDateChange={setTwo}
@@ -91,6 +93,7 @@ const RangeComp2 = () => {
 								</Text>
 							</FormControl.Label>
 							<DatePicker
+								locale={'en'}
 								mode='date'
 								date={new Date(three)}
 								onDateChange={setThree}
@@ -102,7 +105,12 @@ const RangeComp2 = () => {
 									Last Range
 								</Text>
 							</FormControl.Label>
-							<DatePicker mode='date' date={four} onDateChange={setFour} />
+							<DatePicker
+								locale={'en'}
+								mode='date'
+								date={four}
+								onDateChange={setFour}
+							/>
 						</FormControl>
 					</Modal.Body>
 					<Modal.Footer>
