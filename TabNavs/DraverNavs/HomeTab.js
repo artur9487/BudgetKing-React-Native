@@ -31,17 +31,17 @@ const HomeTab = () => {
 				component={Home}
 			/>
 			<Drawer.Screen
-				options={{ title: 'Statistic #1' }}
+				options={{ title: 'Statistics #1' }}
 				name='Statistic1'
 				component={TopStatistics1}
 			/>
 			<Drawer.Screen
-				options={{ title: 'Statistic #2' }}
+				options={{ title: 'Statistics #2' }}
 				name='Statistic2'
 				component={TopStatistics2}
 			/>
 			<Drawer.Screen
-				options={{ title: 'Statistic #3' }}
+				options={{ title: 'Statistics #3' }}
 				name='Statistic3'
 				component={TopStatistics3}
 			/>

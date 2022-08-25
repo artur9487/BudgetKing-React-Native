@@ -29,7 +29,7 @@ const PurchaseItem = ({ item, navigation, delet }) => {
 					</HStack>
 					<HStack>
 						<Text
-							style={[styles.text]}
+							style={[styles.tex]}
 							fontSize='sm'
 							px={4}
 							color={item.type === 'Products' ? 'red.500' : 'emerald.500'}>

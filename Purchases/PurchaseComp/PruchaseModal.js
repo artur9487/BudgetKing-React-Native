@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { Modal, Heading, Text, Button, HStack } from 'native-base';
 import { StyleSheet } from 'react-native';
 

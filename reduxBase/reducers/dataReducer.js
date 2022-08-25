@@ -47,70 +47,70 @@ const Statistic1Func = (arr) => {
 	return data1;
 };
 
-const Statistic2Func = (nonoss, interwal, end, start) => {
-	let kokoss = [];
+const Statistic2Func = (k, interwal, end, start) => {
+	let arr1 = [];
 	const time4 = (end - start) / interwal;
 
-	for (let i = 0; i < nonoss.length; i++) {
-		const datekss = nonoss[i].date.seconds * 1000;
-		const costikk = nonoss[i].allCosts;
-		const indxx = kokoss.findIndex((item) => {
+	for (let i = 0; i < k.length; i++) {
+		const date1 = k[i].date.seconds * 1000;
+		const cost1 = k[i].allCosts;
+		const indxx = arr1.findIndex((item) => {
 			return (
-				datekss.valueOf() >= item.min.valueOf() &&
-				datekss.valueOf() < item.max.valueOf()
+				date1.valueOf() >= item.min.valueOf() &&
+				date1.valueOf() < item.max.valueOf()
 			);
 		});
 
 		for (let j = 0; j < Math.ceil(time4); j++) {
 			const func1 = () => {
-				kokoss[indxx] = {
-					min: kokoss[indxx].min,
-					max: kokoss[indxx].max,
-					day: kokoss[indxx].day,
-					sum: kokoss[indxx].sum + costikk
+				arr1[indxx] = {
+					min: arr1[indxx].min,
+					max: arr1[indxx].max,
+					day: arr1[indxx].day,
+					sum: arr1[indxx].sum + cost1
 				};
 			};
-			const func2 = (firstek3, secundek3) => {
-				kokoss.push({
-					min: firstek3,
-					max: secundek3,
-					day: moment(firstek3).format('Do M YY'),
-					sum: costikk
+			const func2 = (first3, second3) => {
+				arr1.push({
+					min: first3,
+					max: second3,
+					day: moment(first3).format('Do M YY'),
+					sum: cost1
 				});
 			};
 			if (j === 0) {
-				const firstek = start.valueOf();
-				const secundek = start.valueOf() + interwal;
-				if (datekss >= firstek && datekss < secundek) {
+				const first1 = start.valueOf();
+				const second1 = start.valueOf() + interwal;
+				if (date1 >= first1 && date1 < second1) {
 					if (indxx >= 0) {
 						func1();
 					} else {
-						func2(firstek, secundek);
+						func2(first1, second1);
 					}
 				}
 			} else if (j > 0) {
-				const firstek2 = start.valueOf() + interwal * j;
-				const secundek2 = start.valueOf() + interwal * (j + 1);
-				if (datekss >= firstek2 && datekss < secundek2) {
+				const first2 = start.valueOf() + interwal * j;
+				const second2 = start.valueOf() + interwal * (j + 1);
+				if (date1 >= first2 && date1 < second2) {
 					if (indxx >= 0) {
 						func1();
 					} else {
-						func2(firstek2, secundek2);
+						func2(first2, second2);
 					}
 				}
 			}
 		}
 	}
 
-	kokoss.sort(function (a, b) {
+	arr1.sort(function (a, b) {
 		return a.min.valueOf() - b.min.valueOf();
 	});
-	return kokoss;
+	return arr1;
 };
 
-const Statistic3Func = (nonosss, nonosss2, roz1, roz2, type) => {
-	const krokro = [];
-	const krokro2 = [];
+const Statistic3Func = (l, m, roz1, roz2, type) => {
+	const data1 = [];
+	const data2 = [];
 
 	const Loop = (one, two) => {
 		for (let i = 0; i < one.length; i++) {
@@ -129,25 +129,25 @@ const Statistic3Func = (nonosss, nonosss2, roz1, roz2, type) => {
 		}
 	};
 
-	Loop(nonosss, krokro);
-	Loop(nonosss2, krokro2);
+	Loop(l, data1);
+	Loop(m, data2);
 
-	const krokro3 = [];
-	for (let i = 0; i < krokro2.length; i++) {
-		for (let j = 0; j < krokro.length; j++) {
-			if (krokro[j].x === krokro2[i].x) {
+	const data3 = [];
+	for (let i = 0; i < data2.length; i++) {
+		for (let j = 0; j < data2.length; j++) {
+			if (krokro[j].x === data2[i].x) {
 				let newCos;
 				if (type === 'Purchase') {
-					newCos = (krokro[j].y / roz1 / (krokro2[i].y / roz2)) * 100 - 100;
+					newCos = (data1[j].y / roz1 / (data2[i].y / roz2)) * 100 - 100;
 				} else {
-					newCos = (krokro2[i].y / roz2 / (krokro[j].y / roz1)) * 100 - 100;
+					newCos = (data2[i].y / roz2 / (data1[j].y / roz1)) * 100 - 100;
 				}
 
-				krokro3.push({ x: krokro[j].x, y: newCos });
+				data3.push({ x: data1[j].x, y: newCos });
 			}
 		}
 	}
-	return krokro3;
+	return data3;
 };
 
 export default function (state = initialState, action) {
@@ -187,26 +187,26 @@ export default function (state = initialState, action) {
 			newi6[indx2] = action.payload.item;
 			return { ...state, incomes: newi6 };
 		case GET_STATISTICS1:
-			const nono = state.produkty.filter((item) => {
+			const a = state.produkty.filter((item) => {
 				return (
 					action.payload.start.valueOf() < item.date.seconds * 1000 &&
 					action.payload.end.valueOf() > item.date.seconds * 1000
 				);
 			});
 
-			return { ...state, statistic1: [...Statistic1Func(nono)] };
+			return { ...state, statistic1: [...Statistic1Func(a)] };
 		case GET_STATISTICS1b:
-			const nonob = state.incomes.filter((item) => {
+			const b = state.incomes.filter((item) => {
 				return (
 					action.payload.start.valueOf() < item.date.seconds * 1000 &&
 					action.payload.end.valueOf() > item.date.seconds * 1000
 				);
 			});
 
-			return { ...state, statistic1: [...Statistic1Func(nonob)] };
+			return { ...state, statistic1: [...Statistic1Func(b)] };
 		case GET_STATISTICS2:
 			const { start, end, interwal, category } = action.payload;
-			const nonoss = state.produkty.filter((item) => {
+			const c = state.produkty.filter((item) => {
 				if (category === 'All Categories') {
 					return (
 						start.valueOf() < item.date.seconds * 1000 &&
@@ -223,7 +223,7 @@ export default function (state = initialState, action) {
 
 			return {
 				...state,
-				statistic2: [...Statistic2Func(nonoss, interwal, end, start)]
+				statistic2: [...Statistic2Func(c, interwal, end, start)]
 			};
 		case GET_STATISTICS2b:
 			const {
@@ -232,7 +232,7 @@ export default function (state = initialState, action) {
 				interwal: interwal2,
 				category: category2
 			} = action.payload;
-			const nonoss2 = state.incomes.filter((item) => {
+			const d = state.incomes.filter((item) => {
 				if (category2 === 'All Categories') {
 					return (
 						start2.valueOf() < item.date.seconds * 1000 &&
@@ -249,7 +249,7 @@ export default function (state = initialState, action) {
 
 			return {
 				...state,
-				statistic2b: [...Statistic2Func(nonoss2, interwal2, end2, start2)]
+				statistic2b: [...Statistic2Func(d, interwal2, end2, start2)]
 			};
 		case GET_STATISTICS3:
 			const { startRange1, endRange1, startRange2, endRange2, type } =
@@ -257,14 +257,14 @@ export default function (state = initialState, action) {
 			const roz1 = (startRange1.valueOf() - endRange1.valueOf()) / 86400000;
 			const roz2 = (startRange2.valueOf() - endRange2.valueOf()) / 86400000;
 
-			const nonosss = state.produkty.filter((item) => {
+			const e = state.produkty.filter((item) => {
 				return (
 					startRange1.valueOf() < item.date.seconds * 1000 &&
 					endRange1.valueOf() > item.date.seconds * 1000
 				);
 			});
 
-			const nonosss2 = state.produkty.filter((item) => {
+			const f = state.produkty.filter((item) => {
 				return (
 					startRange2.valueOf() < item.date.seconds * 1000 &&
 					endRange2.valueOf() > item.date.seconds * 1000
@@ -273,7 +273,7 @@ export default function (state = initialState, action) {
 
 			return {
 				...state,
-				statistic3: [...Statistic3Func(nonosss, nonosss2, roz1, roz2, type)]
+				statistic3: [...Statistic3Func(e, f, roz1, roz2, type)]
 			};
 		case GET_STATISTICS3b:
 			const {
@@ -286,7 +286,7 @@ export default function (state = initialState, action) {
 			const roz1b = (endRange1b.valueOf() - startRange1b.valueOf()) / 86400000;
 			const roz2b = (endRange2b.valueOf() - startRange2b.valueOf()) / 86400000;
 
-			const nonosssb = state.incomes.filter((item) => {
+			const g = state.incomes.filter((item) => {
 				console.log(
 					startRange1b.valueOf(),
 					endRange1b.valueOf(),
@@ -298,18 +298,16 @@ export default function (state = initialState, action) {
 				);
 			});
 
-			const nonosss2b = state.incomes.filter((item) => {
+			const h = state.incomes.filter((item) => {
 				return (
 					startRange2b.valueOf() < item.date.seconds * 1000 &&
 					endRange2b.valueOf() > item.date.seconds * 1000
 				);
 			});
-			console.log(nonosssb, nonosss2b);
+
 			return {
 				...state,
-				statistic3: [
-					...Statistic3Func(nonosssb, nonosss2b, roz1b, roz2b, typeb)
-				]
+				statistic3: [...Statistic3Func(g, h, roz1b, roz2b, typeb)]
 			};
 		default:
 			return { ...state };
